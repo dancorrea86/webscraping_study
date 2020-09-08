@@ -14,6 +14,7 @@ soup = bs4.BeautifulSoup(res.text, 'html.parser') # pega os texto da pagina em h
 # TODO: Open a browser tab for each result
 linkElems = soup.select('.package-snippet') # Filtra os elementos com a classe "package-snippet" que são links
 numOpen = min(5, len(linkElems)) # Verifica se a quantidade de links é maior do que 5, se sim limita a quantidade a 5
+print (type(linkElems))
 
 for i in range(numOpen):
     urlToOpen = 'https://pypi.org' + linkElems[i].get('href')
